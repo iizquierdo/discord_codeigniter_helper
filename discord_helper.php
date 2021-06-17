@@ -10,9 +10,9 @@
 
 function discordSendMessage( $message, $webhook_id, $webhook_token,  $username = FALSE, $avatar_url = FALSE) {	
  	
-	$url = "https://discord.com/api/webhooks/".$webhook_id."/".$webhook_token;
+$url = "https://discord.com/api/webhooks/".$webhook_id."/".$webhook_token;
 
- 	$hookObject = json_encode([
+$hookObject = json_encode([
     "content" => $message,
     "username" => $username,
     "avatar_url" => $avatar_url,
@@ -37,9 +37,5 @@ function discordSendMessage( $message, $webhook_id, $webhook_token,  $username =
 
 	$response = curl_exec( $ch );
 	curl_close( $ch );
-	
-
-	echo "Enviado a Discord!";
-
 
 }
